@@ -41,5 +41,14 @@ print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
 
+# write to text analysis file
+# pypoll_election_results = os.path.join("pypoll_election_results.txt")
+# with open(pypoll_election_results,"w") as outfile:
+    
+#     outfile.write("Election Results\n-------------------------\n")
+#     outfile.write(f"Total Votes: {total_votes}\n")
+#     outfile.write("-------------------------\n")
+#     outfile.write(f"Winner: {winner}\n")
+#     outfile.write("-------------------------")
 
 
