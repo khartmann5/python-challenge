@@ -17,25 +17,25 @@ profit_loss_change = 0
 
 profit_loss_changes = []
 
-# read CSV file
+# Read CSV file
 with open(budget_data, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
    
-    #read header row
+    # Read header row
     csv_header = next(csvreader)
 
     # Count number of months
     months = len(list(csvreader))
-    print(f"Total Months: {months}")   
-    
-    # # Read each row of data
+    print(f"Total Months: {months}") 
+
+    # Read each row of data
     for row in csvreader:
         
         # Sum the net total amount of "Profit/Losses" over the period
-        current_profit_loss = int(row[1])
+        net_profit_loss += int(row[1])
+    print(f"Total: ${net_profit_loss}")
 
-        # Find the change in the profit_loss
-        previous_profit_loss = 
+    
 
 
         
