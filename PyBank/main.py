@@ -7,25 +7,33 @@ import os
 # Module for reading CSV files
 import csv
 
-csvpath = os.path.join('Resources','budget_data.csv')
+budget_data = os.path.join('Resources','budget_data.csv')
 
-# Define total
+# Set initial variables
+
+# Define lists
 total = 0
 
 # read CSV file
-with open(csvpath, newline='') as csvfile:
+with open(budget_data, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
    
     #read header row
     csv_header = next(csvreader)
+
+    # Count number of months
+    months = len(list(csvreader))
+    print(f"Total Months: {months}")   
     
-    # Read each row of data
+    # # Read each row of data
     for row in csvreader:
         
-        # Count number of months
-        months = len(list(csvreader))+1
-        print(f"Total Months: {months}")     
-
-        # Sum the net total amount of "Profit/Losses" over the period
-        total += float(row[1])
+    # Sum the net total amount of "Profit/Losses" over the period
+        total += int(row[1])
         print(f"Total: ${total}")
+
+       
+
+
+
+        
