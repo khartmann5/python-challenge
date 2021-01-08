@@ -15,7 +15,7 @@ total = 0
 # read CSV file
 with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-
+   
     #read header row
     csv_header = next(csvreader)
     
@@ -26,6 +26,6 @@ with open(csvpath, newline='') as csvfile:
         months = len(list(csvreader))+1
         print(f"Total Months: {months}")     
 
-        # Sum the net total amount of "Profit/Losses" over the period and define total
+        # Sum the net total amount of "Profit/Losses" over the period
         total += float(row[1])
         print(f"Total: ${total}")
