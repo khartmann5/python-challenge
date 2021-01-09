@@ -20,7 +20,6 @@ with open(budget_data, newline='') as csvfile:
    
     # Read header row
     csv_header = next(csvreader)
-    # print(csv_header)
 
     # Read each row of data
     for row in csvreader:
@@ -35,11 +34,9 @@ with open(budget_data, newline='') as csvfile:
 
 # Sum total of net profit losses    
 total_amount_sum = sum(total_amount)
-print(total_amount_sum)
 
  # Count number of months
 total_months = len(total_months)
-print(total_months)
 
 # Calculate the average change
 # use mean function?    
