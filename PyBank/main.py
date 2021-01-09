@@ -43,12 +43,12 @@ with open(budget_data, newline='') as csvfile:
         
       
 # write to text analysis file
-# pybank_financial_analysis = os.path.join("pybank_financial_analysis.txt")
-# with open(pybank_financial_analysis,"w") as outfile:
+pybank_financial_analysis = os.path.join("pybank_financial_analysis.txt")
+with open(pybank_financial_analysis,"w") as outfile:
     
-#     outfile.write("Financial Analysis\n")
-#     outfile.write("---------------------------\n")
-#     outfile.write(f"Total Months: {months}")
+    outfile.write("Financial Analysis\n")
+    outfile.write("---------------------------\n")
+    outfile.write(f"Total Months: {months}")
 
 
        
