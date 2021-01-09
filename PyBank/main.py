@@ -11,7 +11,8 @@ budget_data = os.path.join('Resources','budget_data.csv')
 
 # Lists to store data
 profit_loss_changes = []
-total_amount= []
+total_amount = []
+total_months = []
 
 # Read CSV file
 with open(budget_data, newline='') as csvfile:
@@ -19,10 +20,7 @@ with open(budget_data, newline='') as csvfile:
    
     # Read header row
     csv_header = next(csvreader)
-
-    # Count number of months
-    months = len(list(csvreader))
-    print(f"Total Months: {months}") 
+    print(csv_header)
 
     # Read each row of data
     for row in csvreader:
@@ -30,23 +28,34 @@ with open(budget_data, newline='') as csvfile:
         # Append the net total amount of "Profit/Losses" over the period
         total_amount.append(int(row[1]))
 
+        # keep track of number of months for variable to iterate
+        total_months.append(row[1])
+
         # Calculate change between months    
 
 # Sum total of net profit losses    
-total_amount = sum(total_amount)
-print(total_amount)
+total_amount_sum = sum(total_amount)
+# print(total_amount_sum)
 
-# Calculate the average change    
+ # Count number of months
+total_months = len(total_months)
+# print(total_months)
+
+# Calculate the average change
+# use mean function?    
 
 # Calculate the greatest increase in profits
+# use max function?
 
 # Calculate the greatest decrease in profits
+# use min function
 
 # Find the month of the greatest increase
+# index to find the month?
 
 # Find the month of the greatest decrease
 
-    
+# Print findings   
 
 
         
@@ -60,10 +69,3 @@ print(total_amount)
 #     outfile.write("Financial Analysis\n")
 #     outfile.write("---------------------------\n")
 #     outfile.write(f"Total Months: {months}")
-
-
-       
-
-
-
-        
