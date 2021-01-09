@@ -9,16 +9,9 @@ import csv
 
 budget_data = os.path.join('Resources','budget_data.csv')
 
-# Define variables
-net_profit_loss = 0
-current_profit_loss = 0
-previous_profit_loss = 0
-profit_loss_change = 0
-
 # Lists to store data
 profit_loss_changes = []
-current_profit_losses = []
-net_profit_losses = []
+total_amount= []
 
 # Read CSV file
 with open(budget_data, newline='') as csvfile:
@@ -35,20 +28,23 @@ with open(budget_data, newline='') as csvfile:
     for row in csvreader:
         
         # Append the net total amount of "Profit/Losses" over the period
-        net_profit_losses.append(int(row[1]))
+        total_amount.append(int(row[1]))
 
-        # Determine current profit loss
-        # current_profit_loss = net_profit_loss
+        # Calculate change between months    
 
-        # # Calculate previous months profit loss
-        # previous_profit_loss = current_profit_loss(row[1]-1)
+# Sum total of net profit losses    
+total_amount = sum(total_amount)
+print(total_amount)
 
-# Sum total of net profit losses
-net_profit_losses = sum(net_profit_losses)
+# Calculate the average change    
 
-print(net_profit_losses)
+# Calculate the greatest increase in profits
 
-    
+# Calculate the greatest decrease in profits
+
+# Find the month of the greatest increase
+
+# Find the month of the greatest decrease
 
     
 
