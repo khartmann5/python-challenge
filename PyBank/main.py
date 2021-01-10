@@ -46,6 +46,7 @@ with open(budget_data, newline='') as csvfile:
         # Calculate current change
         current_change = int(row[1]) - previous_month
         
+        # Find the greatest increase and decrease of change between months
         if current_change > max_month[1]:
             max_month[0] = row[0]
             max_month[1] = current_change
@@ -54,11 +55,11 @@ with open(budget_data, newline='') as csvfile:
             min_month[0] = row[0]
             min_month[1] = current_change
 
+        # Start change list on the 3rd row for correct calculation
         if count > 1:
             change_list.append(current_change)
 
-        # change between months
-        # profit_loss_change.append()
+        # storing previous month
         previous_month = int(row[1])
 
 # Sum total of net profit losses    
