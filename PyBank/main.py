@@ -19,7 +19,7 @@ max_month = ['',-9999999]
 min_month = ['',9999999]
 change_list = []
 
-#Variables for data
+# Variables for data
 previous_month = 0
 current_change = 0
 count = 0
@@ -34,13 +34,13 @@ with open(budget_data, newline='') as csvfile:
     # Read each row of data
     for row in csvreader:
         
-        #Create a count variable
+        # Create a count variable
         count += 1
 
         # Append the net total amount of "Profit/Losses" over the period
         total_amount.append(int(row[1]))
 
-        # keep track of number of months for variable to iterate
+        # Keep track of number of months for variable to iterate
         total_months.append(row[0])
 
         # Calculate current change
@@ -59,7 +59,7 @@ with open(budget_data, newline='') as csvfile:
         if count > 1:
             change_list.append(current_change)
 
-        # storing previous month
+        # Storing previous month
         previous_month = int(row[1])
 
 # Sum total of net profit losses    
@@ -78,7 +78,7 @@ print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {max_month[0]} (${max_month[1]})")
 print(f"Greatest Decrease in Profits: {min_month[0]} (${min_month[1]})")
     
-# write to text analysis file
+# Write to text analysis file
 pybank_financial_analysis = os.path.join("pybank_financial_analysis.txt")
 with open(pybank_financial_analysis,"w") as outfile:
     

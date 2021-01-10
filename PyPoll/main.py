@@ -8,9 +8,7 @@ election_data = os.path.join('Resources','election_data.csv')
 
 # Define variables
 total_votes = 0
-vote_percentages = 0
 vote_candidate = []
-
 candidates_dict = {}
 vote_percentages = {}
 
@@ -34,19 +32,19 @@ with open(election_data, newline='') as csvfile:
         # Determine overall winner
         winner = max(candidates_dict, key=candidates_dict.get)
 
+# Calculate percentage won
 for key in candidates_dict.keys():
     vote_candidate.append(candidates_dict[key]/total_votes * 100)
-    vote_candidate.append(candidates_dict[key])
-    vote_percentages[key] = vote_candidate
+    vote_percentages = vote_candidate
+
+print(vote_percentages)
 
 # Print results
 print("Election Results\n-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
-# for key in vote_percentages:
-# print(f"{key}: {vote_percentages[key][0]}% ({vote_percentages[key][1]})")
-for i in candidates_dict:   
-    print(f"{i}: {vote_percentages[key][0]}% ({candidates_dict[i]})")
+for key in candidates_dict:   
+    print(f"{key}: {vote_percentages[0]}% ({candidates_dict[key]})")
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
@@ -57,6 +55,9 @@ print("-------------------------")
     
 #     outfile.write("Election Results\n-------------------------\n")
 #     outfile.write(f"Total Votes: {total_votes}\n")
+#     outfile.write("-------------------------\n")
+#     for key in candidates_dict:   
+#         outfile.write(f"{key}: {vote_candidate[0]}% ({candidates_dict[key]})\n")
 #     outfile.write("-------------------------\n")
 #     outfile.write(f"Winner: {winner}\n")
 #     outfile.write("-------------------------")
