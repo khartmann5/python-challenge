@@ -9,8 +9,10 @@ election_data = os.path.join('Resources','election_data.csv')
 # Define variables
 total_votes = 0
 vote_percentages = 0
+vote_candidate = []
 
 candidates_dict = {}
+vote_percentages = {}
 
 # Read CSV file
 with open(election_data, newline='') as csvfile:
@@ -29,18 +31,20 @@ with open(election_data, newline='') as csvfile:
         # Total number of votes cast    
         total_votes = total_votes + 1
 
-        # List of candidates who received votes
-
-        # Percentage of votes each candidate won
-
-        # Total number of votes each candidate won
-
         # Determine overall winner
         winner = max(candidates_dict, key=candidates_dict.get)
+
+        for key in candidates_dict.keys():
+            vote_candidate.append(candidates_dict[key]/total_votes * 100)
+            vote_candidate.append(candidates_dict[key])
+            vote_percentages[key] = vote_candidate
 
 # Print results
 print("Election Results\n-------------------------")
 print(f"Total Votes: {total_votes}")
+print("-------------------------")
+for key in vote_percentages:
+    print(f"{key}: {vote_percentages[key][0]}% ({vote_percentages[key][1]})")
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
